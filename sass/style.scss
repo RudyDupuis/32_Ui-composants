@@ -221,7 +221,8 @@ footer {
       align-items: center;
 
       @media (max-width: 600px) {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        white-space: nowrap;
       }
 
       .breadcrumb-arrow{
@@ -347,6 +348,11 @@ footer {
 #carousel{
   display: flex;
   width: 80%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    overflow: hidden;
+  }
 
   &__img1, &__img2, &__img3, &__img4, &__img5{
     width: 20%;
@@ -1460,7 +1466,11 @@ input[type=range]:focus::-ms-fill-upper {
   
       h3{
         margin: 0px 10px;
-        white-space: nowrap;    
+        white-space: nowrap;
+
+        @media (max-width: 600px) {
+          font-size: 0.8rem;
+        }    
       }
     }
   
@@ -1468,7 +1478,6 @@ input[type=range]:focus::-ms-fill-upper {
 
       & > h3{
         color: $colorSecondary;
-        font-size: 3rem;
       }
   
       nav{
@@ -1494,6 +1503,10 @@ input[type=range]:focus::-ms-fill-upper {
     left: 80px;
     white-space: nowrap;
     visibility: hidden;
+
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
   }
 
   &:hover{

@@ -218,7 +218,8 @@ footer {
 
 @media (max-width: 600px) {
   #breadcrumb ul li {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 }
 
@@ -336,6 +337,13 @@ footer {
 #carousel {
   display: flex;
   width: 80%;
+}
+
+@media (max-width: 600px) {
+  #carousel {
+    width: 100%;
+    overflow: hidden;
+  }
 }
 
 #carousel__img1, #carousel__img2, #carousel__img3, #carousel__img4, #carousel__img5 {
@@ -1482,9 +1490,14 @@ input[type=range]:focus::-ms-fill-upper {
   white-space: nowrap;
 }
 
+@media (max-width: 600px) {
+  #tabBar-1 nav h3, #tabBar-2 nav h3, #tabBar-3 nav h3 {
+    font-size: 0.8rem;
+  }
+}
+
 #tabBar-1:hover > h3, #tabBar-2:hover > h3, #tabBar-3:hover > h3 {
   color: #1e3d59;
-  font-size: 3rem;
 }
 
 #tabBar-1:hover nav, #tabBar-2:hover nav, #tabBar-3:hover nav {
@@ -1507,6 +1520,12 @@ input[type=range]:focus::-ms-fill-upper {
   left: 80px;
   white-space: nowrap;
   visibility: hidden;
+}
+
+@media (max-width: 600px) {
+  #tooltip__div {
+    font-size: 0.8rem;
+  }
 }
 
 #tooltip:hover #tooltip__div {
