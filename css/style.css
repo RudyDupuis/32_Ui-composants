@@ -1,0 +1,1528 @@
+@charset "UTF-8";
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #1e3d59;
+}
+
+a:hover {
+  color: #ff6e40;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: Helvetica;
+  color: #1e3d59;
+  background-color: #f5f0e1;
+}
+
+header {
+  text-align: center;
+  margin: 100px 0px;
+}
+
+header h1 {
+  font-weight: bold;
+  color: #ff6e40;
+}
+
+.composent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+.composent h2 {
+  margin-bottom: 50px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/**** Anchor****/
+#anchor {
+  position: sticky;
+  top: 90%;
+  left: 95%;
+  border: 3px solid #1e3d5943;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#anchor__arrow {
+  width: 16px;
+  height: 16px;
+  border-top: 4px solid #1e3d5943;
+  border-right: 4px solid #1e3d5943;
+  transform: rotate(-45deg);
+}
+
+/**** 1. Accordion****/
+/**
+*The division encompassing the title and the section has a fixed height of 43px. 
+*The title is 40px high and everything beyond the division is hidden with overflow.
+**/
+#accordion {
+  width: 60%;
+}
+
+#accordion div {
+  height: 43px;
+  overflow: hidden;
+}
+
+#accordion div:hover {
+  cursor: pointer;
+  height: 100%;
+}
+
+#accordion div:hover h3 {
+  color: #ff6e40;
+}
+
+#accordion h3 {
+  background-color: #1e3d59;
+  border-radius: 5px;
+  color: #f5f0e1;
+  height: 40px;
+  padding: 10px 10px;
+}
+
+#accordion p {
+  margin: 5px 0px 20px 0px;
+}
+
+/**** 2. Bento Menu****/
+/**
+*The grid is 100px by 100px. The h3s have a font-size of 0px.
+*When you move the mouse over the menu, the grid expands and the h3s appear with a font-size of 20px.
+**/
+#bentoMenu-container {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+#bentoMenu {
+  border: 4px solid #ff6e40;
+  border-radius: 20px;
+  padding: 8px 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 8px;
+  width: 100px;
+  height: 100px;
+}
+
+#bentoMenu:hover {
+  animation: bentoMenu .3s ease-in forwards;
+}
+
+@keyframes bentoMenu {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+#bentoMenu:hover h3 {
+  animation: bentoMenu-H3 .5s ease-in forwards;
+}
+
+@keyframes bentoMenu-H3 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 20px;
+  }
+}
+
+#bentoMenu__1, #bentoMenu__2, #bentoMenu__3, #bentoMenu__4 {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#bentoMenu__1 h3, #bentoMenu__2 h3, #bentoMenu__3 h3, #bentoMenu__4 h3 {
+  font-size: 0px;
+}
+
+#bentoMenu__1:hover, #bentoMenu__2:hover, #bentoMenu__3:hover, #bentoMenu__4:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+#bentoMenu__1 {
+  background-color: #ffc13b;
+  color: #1e3d59;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#bentoMenu__2 {
+  background-color: #1e3d59;
+  color: #f5f0e1;
+  grid-column: 2;
+  grid-row: 1/3;
+}
+
+#bentoMenu__3 {
+  background-color: #ff6e40;
+  color: #f5f0e1;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#bentoMenu__4 {
+  background-color: #ffc13b;
+  color: #1e3d59;
+  grid-column: 1/3;
+  grid-row: 3;
+}
+
+/**** 3. Breadcrumb****/
+#breadcrumb ul {
+  display: flex;
+  padding: 15px 15px;
+}
+
+#breadcrumb ul li {
+  padding: 0px 10px;
+  color: #ff6e40;
+  display: flex;
+  align-items: center;
+}
+
+#breadcrumb ul li .breadcrumb-arrow {
+  border-top: 3px solid #1e3d59;
+  border-right: 3px solid #1e3d59;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+}
+
+/**** 4. Button****/
+[type="button"], [type="submit"] {
+  background-color: #1e3d59;
+  padding: 15px 15px;
+  color: #f5f0e1;
+  font-weight: bold;
+  border-radius: 15px 5px;
+  border: 4px solid #1e3d59;
+}
+
+[type="button"]:hover, [type="submit"]:hover {
+  cursor: pointer;
+}
+
+[type="button"]:active, [type="submit"]:active {
+  background-color: #f5f0e1;
+  color: #1e3d59;
+}
+
+[type="button"]:nth-child(2), [type="submit"]:nth-child(2) {
+  margin: 0px 30px;
+}
+
+.different-button {
+  background-color: #f5f0e1;
+  color: #1e3d59;
+  border: 4px solid #1e3d59;
+}
+
+.different-button:active {
+  background-color: #1e3d59;
+  color: #f5f0e1;
+}
+
+/**** 5. Card****/
+/**
+*A card with a height set to 430 px to contain all the elements of face 1. 
+*hoverflow: hidden; to hide the elements of face 2.
+*Then a flip animation to switch to face 2 when the button is active.
+**/
+#card {
+  border: 3px solid #1e3d59;
+  border-radius: 20px;
+  text-align: center;
+  height: 430px;
+  width: 300px;
+  overflow: hidden;
+}
+
+#card div {
+  margin-bottom: 20px;
+}
+
+#card__image {
+  height: 300px;
+  border-radius: 15px;
+  background: linear-gradient(70deg, #ffc13b, #ff6e40);
+}
+
+#card__image h3 {
+  color: #f5f0e1;
+  font-weight: bolder;
+  line-height: 16;
+  font-size: 2rem;
+}
+
+#card__used {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8rem;
+}
+
+#card [type="button"] {
+  margin-bottom: 20px;
+}
+
+#card__description {
+  padding: 100px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#card:active {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  animation: card 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@keyframes card {
+  0% {
+    transform: translateX(0) rotateY(0);
+  }
+  80% {
+    transform: translateX(-100%) rotateY(-360deg);
+  }
+}
+
+/**** 6. Carousel***/
+/**
+*A div with a width of 80% that contains 5 images with a witdh of 20%.
+* When hovering, the image takes up 50% of the div and the text is displayed with a visibility: visible;
+**/
+#carousel {
+  display: flex;
+  width: 80%;
+}
+
+#carousel__img1, #carousel__img2, #carousel__img3, #carousel__img4, #carousel__img5 {
+  width: 20%;
+  height: 400px;
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+
+#carousel__img1 h3, #carousel__img2 h3, #carousel__img3 h3, #carousel__img4 h3, #carousel__img5 h3 {
+  padding-bottom: 30px;
+}
+
+#carousel__img1 p, #carousel__img2 p, #carousel__img3 p, #carousel__img4 p, #carousel__img5 p {
+  visibility: hidden;
+  padding: 0px 5px 30px 5px;
+}
+
+#carousel__img1:hover, #carousel__img2:hover, #carousel__img3:hover, #carousel__img4:hover, #carousel__img5:hover {
+  width: 50%;
+}
+
+#carousel__img1:hover p, #carousel__img2:hover p, #carousel__img3:hover p, #carousel__img4:hover p, #carousel__img5:hover p {
+  visibility: visible;
+}
+
+#carousel__img1 {
+  background: linear-gradient(80deg, #ff6e40, #ffc13b);
+  color: #f5f0e1;
+}
+
+#carousel__img2 {
+  background: linear-gradient(200deg, #1e3d59, #f5f0e1);
+}
+
+#carousel__img3 {
+  background: linear-gradient(20deg, #ffc13b, #1e3d59);
+  color: #f5f0e1;
+}
+
+#carousel__img4 {
+  background: linear-gradient(120deg, #ffc13b, #f5f0e1);
+}
+
+#carousel__img5 {
+  background: linear-gradient(180deg, #ff6e40, #1e3d59);
+  color: #f5f0e1;
+}
+
+/**** 7. Checkbox***/
+#checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkbox div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+#checkbox label {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  border: 2px solid #1e3d59;
+}
+
+[type="checkbox"]:hover {
+  border: 4px solid #1e3d59;
+}
+
+[type="checkbox"]:checked {
+  background: #1e3d59;
+}
+
+.different-checkbox {
+  border-radius: 20px;
+}
+
+/**** 8. Comment***/
+#comment {
+  width: 60%;
+  border: 3px solid #ff6e40;
+  border-radius: 20px;
+  padding: 30px 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#comment textarea {
+  width: 80%;
+  border: 2px solid #1e3d59;
+  resize: none;
+  font-size: 1rem;
+  background-color: #f5f0e1;
+  padding: 5px;
+}
+
+#comment textarea:focus {
+  border: 2px solid #ffc13b;
+  outline: 0;
+}
+
+#comment [type="submit"] {
+  height: 60px;
+}
+
+/**** 9. Döner Menu***/
+/**
+*A 100px by 100px div with 3 links. The background is the same color as the text so that it cannot be seen.
+*As you move the mouse over the menu, the links expand and the background disappears with background-color: transparent;
+**/
+#donerMenu-container {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+#donerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ff6e40;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+#donerMenu h3 {
+  margin-bottom: 6px;
+}
+
+#donerMenu h3:first-child {
+  font-size: 15px;
+}
+
+#donerMenu h3:nth-child(2) {
+  font-size: 9px;
+}
+
+#donerMenu h3:last-child {
+  font-size: 4px;
+  margin-bottom: 0px;
+}
+
+#donerMenu h3 a {
+  background-color: #1e3d59;
+  border-radius: 30px;
+}
+
+#donerMenu:hover {
+  border: none;
+  background-color: #1e3d5943;
+  animation: donerMenu .3s ease-in forwards;
+}
+
+@keyframes donerMenu {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+#donerMenu:hover h3 {
+  margin-bottom: 12px;
+}
+
+#donerMenu:hover h3 a {
+  background-color: transparent;
+}
+
+#donerMenu:hover h3:first-child {
+  animation: donerMenu-H3-1 .3s ease-in forwards;
+}
+
+@keyframes donerMenu-H3-1 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 28px;
+  }
+}
+
+#donerMenu:hover h3:nth-child(2) {
+  animation: donerMenu-H3-2 .3s ease-in forwards;
+}
+
+@keyframes donerMenu-H3-2 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 20px;
+  }
+}
+
+#donerMenu:hover h3:last-child {
+  animation: donerMenu-H3-3 .3s ease-in forwards;
+}
+
+@keyframes donerMenu-H3-3 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 14px;
+  }
+}
+
+/**** 10. Dropdown***/
+/**
+*The division measures the size of the search bar, and the other elements are hidden with overflow: hidden;
+* On hover, the arrow goes down and the div returns to  correct size with height: 145px;
+**/
+#dropdown {
+  width: 400px;
+  height: 35px;
+  overflow: hidden;
+}
+
+#dropdown__bar {
+  height: 35px;
+  border: 2px solid #1e3d59;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+
+#dropdown__bar-arrow {
+  width: 16px;
+  height: 16px;
+  border-top: 4px solid #1e3d59;
+  border-right: 4px solid #1e3d59;
+  transform: rotate(45deg);
+  transition: all 0.4s;
+}
+
+#dropdown__element {
+  margin-top: 10px;
+  border: 2px solid #1e3d59;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#dropdown__element h3 {
+  padding: 5px 0px 5px 10px;
+}
+
+#dropdown__element h3:hover {
+  background-color: #ff6e40;
+  color: #f5f0e1;
+}
+
+#dropdown:hover {
+  animation: Dropdown .3s ease-in forwards;
+}
+
+@keyframes Dropdown {
+  from {
+    height: 35px;
+  }
+  to {
+    height: 145px;
+  }
+}
+
+#dropdown:hover #dropdown__bar {
+  background-color: #1e3d5943;
+}
+
+#dropdown:hover #dropdown__bar-arrow {
+  transform: rotate(135deg) translateY(5px);
+}
+
+/**** 11. Feed***/
+/**
+*The division containing the feed at a height of 600px and an overflow-y: scroll; which allows you to move through the feed.
+*Media queries cause the feed to take the full width when the screen is less than 1000 pixels.
+**/
+#feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  overflow-y: scroll;
+  border: 3px solid #ff6e40;
+  width: 80%;
+}
+
+#feed .feed-post {
+  width: 50%;
+  padding: 10px 10px;
+  border: 2px solid #1e3d5943;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+
+#feed .feed-post h3 {
+  margin-bottom: 20px;
+}
+
+#feed .feed-post h5 {
+  margin-top: 30px;
+  text-align: end;
+}
+
+#feed .feed-post p {
+  padding: 20px;
+}
+
+@media (max-width: 1000px) {
+  #feed .feed-post {
+    width: 100%;
+  }
+}
+
+#feed .feed-image {
+  width: 100%;
+  height: 400px;
+}
+
+#feed__post1-img {
+  background: linear-gradient(80deg, #ff6e40, #ffc13b);
+}
+
+#feed__post3-img {
+  background: linear-gradient(20deg, #ffc13b, #1e3d59);
+}
+
+/**** 12. Form***/
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #1e3d59;
+  border-radius: 20px;
+}
+
+#form .inputField {
+  width: 80%;
+}
+
+#form div {
+  display: flex;
+  align-items: center;
+}
+
+#form div label {
+  font-size: 0.7rem;
+  margin-left: 7px;
+}
+
+/**** 13. Hamburger Menu***/
+/**
+*A 100px by 100px div with 3 links. The background is the same color as the text so that it cannot be seen.
+*As you move the mouse over the menu, the links expand and the background disappears with background-color: transparent;
+**/
+#hamburgerMenu-container {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+#hamburgerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ff6e40;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+#hamburgerMenu h3 {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+#hamburgerMenu h3:last-child {
+  margin-bottom: 0px;
+}
+
+#hamburgerMenu a {
+  background-color: #1e3d59;
+  border-radius: 30px;
+}
+
+#hamburgerMenu:hover {
+  border: none;
+  background-color: #1e3d5943;
+  animation: BurgerMenu .3s ease-in forwards;
+}
+
+@keyframes BurgerMenu {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+#hamburgerMenu:hover h3 {
+  margin-bottom: 12px;
+  animation: BurgerMenu-H3 .3s ease-in forwards;
+}
+
+@keyframes BurgerMenu-H3 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 28px;
+  }
+}
+
+#hamburgerMenu:hover a {
+  background-color: transparent;
+}
+
+/**** 14. Icon***/
+.icon {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.icon__glass {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #ff6e40;
+  border-radius: 50px;
+  position: absolute;
+  top: 32px;
+  left: 35px;
+}
+
+.icon__handle {
+  width: 90px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #ff6e40;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 127px;
+  left: 85px;
+}
+
+/**** 15. Input field***/
+.inputField {
+  background-color: transparent;
+  outline: 0;
+  border: none;
+  border-bottom: 2px solid #1e3d59;
+  width: 200px;
+  padding: 10px 10px;
+}
+
+.inputField:focus {
+  border-bottom: 3px solid #ff6e40;
+}
+
+.inputField:focus:invalid {
+  border-bottom: 2px solid red;
+}
+
+/**** 16. Kebab Menu***/
+/**
+*A 100px by 100px div with 3 links in display: none; The h3 are 20px by 20px and have a colored background.
+*When you move the mouse over the menu, the links appear with display: inline;
+*and the background disappears with background-color: transparent;
+*Width and height: auto;
+**/
+#kebabMenu-container {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+#kebabMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ff6e40;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+#kebabMenu h3 {
+  margin-bottom: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: #1e3d59;
+  border-radius: 30px;
+}
+
+#kebabMenu h3:last-child {
+  margin-bottom: 0px;
+}
+
+#kebabMenu a {
+  display: none;
+}
+
+#kebabMenu:hover {
+  border: none;
+  background-color: #1e3d5943;
+  animation: KebabMenu .3s ease-in forwards;
+}
+
+@keyframes KebabMenu {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+#kebabMenu:hover h3 {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  margin-bottom: 12px;
+  animation: KebabMenu-H3 .3s ease-in forwards;
+}
+
+@keyframes KebabMenu-H3 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 28px;
+  }
+}
+
+#kebabMenu:hover a {
+  display: inline;
+}
+
+#kebabMenu:hover a:hover {
+  color: #ff6e40;
+}
+
+/**** 17. Loader***/
+#loader {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loader__icon {
+  width: 150px;
+  height: 150px;
+  border-top: 15px solid #ff6e40;
+  border-bottom: 15px solid #ff6e40;
+  border-right: 15px solid #f5f0e1;
+  border-left: 15px solid #f5f0e1;
+  border-radius: 100px;
+  animation: loader 3s infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/**** 18. Meatballs Menu***/
+/**
+*A 100px by 100px div with 3 links in display: none; The h3 are 20px by 20px and have a colored background.
+*When you move the mouse over the menu, the links appear with display: inline;
+*and the background disappears with background-color: transparent;
+*Width and height: auto;
+**/
+#meatballsMenu-container {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+
+#meatballsMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ff6e40;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+#meatballsMenu h3 {
+  margin-right: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: #1e3d59;
+  border-radius: 30px;
+}
+
+#meatballsMenu h3:last-child {
+  margin-right: 0px;
+}
+
+#meatballsMenu a {
+  display: none;
+}
+
+#meatballsMenu:hover {
+  border: none;
+  background-color: #1e3d5943;
+  animation: MeatballsMenu .3s ease-in forwards;
+}
+
+@keyframes MeatballsMenu {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+  to {
+    width: 600px;
+    height: 100px;
+  }
+}
+
+#meatballsMenu:hover h3 {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  margin-right: 50px;
+  animation: MeatballsMenu-H3 .3s ease-in forwards;
+}
+
+@keyframes MeatballsMenu-H3 {
+  from {
+    font-size: 0px;
+  }
+  to {
+    font-size: 28px;
+  }
+}
+
+#meatballsMenu:hover h3:last-child {
+  margin-right: 0px;
+}
+
+@media (max-width: 600px) {
+  #meatballsMenu:hover h3 {
+    margin-right: 20px;
+    animation: MeatballsMenu-H3 .3s ease-in forwards;
+  }
+  @keyframes MeatballsMenu-H3 {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 20px;
+    }
+  }
+}
+
+#meatballsMenu:hover a {
+  display: inline;
+}
+
+#meatballsMenu:hover a:hover {
+  color: #ff6e40;
+}
+
+/**** 19. Modal***/
+#modal {
+  width: 60%;
+  border: 3px solid #1e3d59;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#modal:hover {
+  border: 3px solid #ff6e40;
+}
+
+#modal h3, #modal p {
+  margin-bottom: 20px;
+}
+
+#modal form {
+  display: flex;
+  justify-content: space-around;
+}
+
+#modal form div {
+  display: flex;
+  align-items: center;
+}
+
+#modal form div label {
+  margin-left: 10px;
+}
+
+@media (max-width: 800px) {
+  #modal {
+    text-align: center;
+  }
+  #modal div, #modal form {
+    flex-direction: column;
+  }
+  #modal #modal-checkbox, #modal label {
+    margin-bottom: 20px;
+  }
+}
+
+/**** 20. Notification***/
+#notification {
+  background-color: #1e3d5943;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  #notification {
+    flex-direction: column;
+    height: 200px;
+  }
+  #notification p {
+    margin: 20px 0px;
+  }
+}
+
+/**** 21. Pagination***/
+#pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+#pagination h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #1e3d5943;
+}
+
+#pagination h3:active {
+  background-color: #ff6e40;
+}
+
+/**** 22. Picker***/
+#picker {
+  display: flex;
+  align-items: center;
+}
+
+#picker input {
+  margin: 0px 20px;
+  border: 2px solid #1e3d59;
+}
+
+#picker [type="date"] {
+  color: #1e3d59;
+  background-color: #f5f0e1;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#picker [type="color"] {
+  width: 80px;
+  height: 80px;
+}
+
+/**** 23. ProgressBar***/
+#progressBar {
+  width: 60%;
+  height: 40px;
+  border: 4px solid #1e3d59;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#progressBar__bar {
+  width: 100%;
+  height: 100%;
+  background-color: #ff6e40;
+  border-radius: 20px;
+  transform-origin: 0% 50%;
+}
+
+#progressBar:hover #progressBar__bar {
+  animation: progressBar 5s ease-in;
+}
+
+@keyframes progressBar {
+  from {
+    transform: scaleX(0%);
+  }
+  to {
+    transform: scaleX(100%);
+  }
+}
+
+/**** 24. Radio Buttons***/
+#radioButtons {
+  border: none;
+}
+
+#radioButtons div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#radioButtons div label {
+  margin-left: 40px;
+}
+
+#radioButtons div label:hover {
+  cursor: pointer;
+}
+
+#radioButtons input {
+  appearance: none;
+  position: absolute;
+  border: 10px solid #1e3d59;
+  border-radius: 20px;
+}
+
+#radioButtons input:checked {
+  border: 10px solid #ff6e40;
+}
+
+/**** 25. Search Field***/
+/**
+*A text entry and css magnifier positioned with relative position and z-index.
+* When input is focused, its background hides the magnifying glass.
+**/
+#searchField {
+  display: flex;
+  align-items: center;
+}
+
+#searchField .inputField {
+  border: 3px solid #1e3d59;
+  border-radius: 20px;
+  position: relative;
+  left: 30px;
+  z-index: 2;
+  height: 60px;
+  width: 300px;
+  font-size: 1rem;
+}
+
+#searchField .inputField:focus {
+  border: 3px solid #ff6e40;
+  background-color: #f5f0e1;
+}
+
+#searchField .icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  right: 30px;
+}
+
+#searchField .icon__glass {
+  width: 20px;
+  height: 20px;
+  border: 4px solid #ff6e40;
+  top: 8px;
+  left: 9px;
+}
+
+#searchField .icon__handle {
+  width: 23px;
+  height: 4px;
+  top: 31px;
+  left: 21px;
+}
+
+/**** 26. Sidebar***/
+#sidebar {
+  width: 300px;
+  background-color: #1e3d5943;
+  padding: 30px 30px;
+}
+
+#sidebar h3 {
+  margin-bottom: 20px;
+}
+
+#sidebar-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+/**** 27. Slider Control***/
+/**
+*code generated with https://www.cssportal.com/style-input-range/  
+*And reduced
+**/
+input[type=range] {
+  height: 37px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 300px;
+  background-color: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 12px;
+  cursor: pointer;
+  background: #1e3d59;
+  border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid #1e3d59;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background: #f5f0e1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #1e3d59;
+}
+
+input[type=range]::-moz-range-track {
+  height: 12px;
+  cursor: pointer;
+  background: #1e3d59;
+  border-radius: 10px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 2px solid #1e3d59;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background: #f5f0e1;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  height: 12px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #1e3d59;
+  border: 1px solid #1e3d59;
+  border-radius: 20px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #1e3d59;
+  border: 1px solid #1e3d59;
+  border-radius: 20px;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  border: 1px solid #1e3d59;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background: #f5f0e1;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #1e3d59;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #1e3d59;
+}
+
+/**** 28. Stepper***/
+/**
+*A division with the number of steps that changes background color if active.
+*Then another division with the name of the aligned steps.
+**/
+#stepper__bar {
+  display: flex;
+  align-items: center;
+}
+
+#stepper__bar a {
+  background-color: #ffc13b;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stepper__bar a:active {
+  background-color: #f5f0e1;
+  border: 5px solid #ffc13b;
+}
+
+#stepper__bar a:hover {
+  color: #f5f0e1;
+}
+
+#stepper__bar div {
+  border-bottom: 5px solid #ffc13b;
+  width: 80px;
+  height: 1px;
+}
+
+#stepper__step {
+  display: flex;
+}
+
+#stepper__step h5 {
+  margin: 10px 80px 0px 0px;
+}
+
+#stepper__step h5:nth-child(4) {
+  margin-right: 0px;
+}
+
+/**** 29. Tag***/
+/**** 30. Tab Bar***/
+/**
+*The nav is in absolute position at -40px from the tab bar and with visibility: hidden;
+*During the hover, the visibility changes to visible.
+**/
+#tabBar {
+  display: flex;
+  margin-top: 50px;
+}
+
+#tabBar-1, #tabBar-2, #tabBar-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#tabBar-1 > h3, #tabBar-2 > h3, #tabBar-3 > h3 {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #ff6e40;
+}
+
+#tabBar-1 nav, #tabBar-2 nav, #tabBar-3 nav {
+  display: flex;
+  background-color: #1e3d5943;
+  border-radius: 20px;
+  padding: 10px 10px;
+  position: absolute;
+  top: -40px;
+  visibility: hidden;
+}
+
+#tabBar-1 nav h3, #tabBar-2 nav h3, #tabBar-3 nav h3 {
+  margin: 0px 10px;
+  white-space: nowrap;
+}
+
+#tabBar-1:hover > h3, #tabBar-2:hover > h3, #tabBar-3:hover > h3 {
+  color: #1e3d59;
+  font-size: 3rem;
+}
+
+#tabBar-1:hover nav, #tabBar-2:hover nav, #tabBar-3:hover nav {
+  visibility: visible;
+}
+
+/**** 31. ToolTip***/
+#tooltip {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#tooltip__div {
+  margin-left: 15px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #1e3d5943;
+  position: absolute;
+  left: 80px;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+#tooltip:hover #tooltip__div {
+  visibility: visible;
+}
+
+/**** 32. Toggle***/
+/**
+*Tuto :
+*https://www.codeur.com/tuto/css/toggle-switch-remplacer-checkbox-css/
+**/
+#toggle .switch {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#toggle .switch input {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 0px;
+  height: 0px;
+}
+
+#toggle .switch input + span {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #1e3d59;
+  border-radius: 20px;
+}
+
+#toggle .switch input + span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  background-color: #f5f0e1;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+}
+
+#toggle .switch input:checked + span {
+  background-color: #1e3d5943;
+}
+
+#toggle .switch input:checked + span::before {
+  left: 34px;
+}
