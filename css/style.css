@@ -53,7 +53,7 @@ footer {
 /**** Anchor****/
 #anchor {
   position: sticky;
-  top: 90%;
+  top: 85%;
   left: 95%;
   border: 3px solid #1e3d5943;
   border-radius: 20px;
@@ -214,6 +214,12 @@ footer {
   color: #ff6e40;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  #breadcrumb ul li {
+    font-size: 0.8rem;
+  }
 }
 
 #breadcrumb ul li .breadcrumb-arrow {
@@ -444,6 +450,16 @@ footer {
   height: 60px;
 }
 
+@media (max-width: 600px) {
+  #comment {
+    flex-direction: column;
+    align-items: center;
+  }
+  #comment [type="submit"] {
+    margin-top: 20px;
+  }
+}
+
 /**** 9. Döner Menu***/
 /**
 *A 100px by 100px div with 3 links. The background is the same color as the text so that it cannot be seen.
@@ -561,6 +577,12 @@ footer {
   width: 400px;
   height: 35px;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  #dropdown {
+    width: 80%;
+  }
 }
 
 #dropdown__bar {
@@ -684,6 +706,12 @@ footer {
   height: 400px;
   border: 2px solid #1e3d59;
   border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  #form {
+    width: 80%;
+  }
 }
 
 #form .inputField {
@@ -1007,7 +1035,7 @@ footer {
 
 @media (max-width: 600px) {
   #meatballsMenu:hover h3 {
-    margin-right: 20px;
+    margin-right: 16px;
     animation: MeatballsMenu-H3 .3s ease-in forwards;
   }
   @keyframes MeatballsMenu-H3 {
@@ -1015,7 +1043,7 @@ footer {
       font-size: 0px;
     }
     to {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }
@@ -1387,12 +1415,24 @@ input[type=range]:focus::-ms-fill-upper {
   height: 1px;
 }
 
+@media (max-width: 600px) {
+  #stepper__bar div {
+    width: 40px;
+  }
+}
+
 #stepper__step {
   display: flex;
 }
 
 #stepper__step h5 {
   margin: 10px 80px 0px 0px;
+}
+
+@media (max-width: 600px) {
+  #stepper__step h5 {
+    margin-right: 40px;
+  }
 }
 
 #stepper__step h5:nth-child(4) {
