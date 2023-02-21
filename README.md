@@ -4,7 +4,6 @@ I use this site :
 https://careerfoundry.com/en/blog/ui-design/ui-element-glossary/ 
 which lists these famous components. 
 
-You can check out this codepen 
+You can check out this codepen :
 https://codepen.io/Rudy_D/pen/yLjELxZ
 if you want to interact with the components.
-
